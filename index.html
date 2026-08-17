@@ -6,6 +6,105 @@
   <title>Raphael Roman — VFX &amp; Effects Animation</title>
   <meta name="description" content="Raphael Roman — VFX and Effects Animation artist. Houdini simulations, real-time game FX, cinematic visual effects.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE-SPECIFIC OVERRIDES ── */
+
+    /* Slim intro strip */
+    .intro {
+      padding: 48px 40px 36px;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro-inner {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .intro-name {
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .intro-descriptor {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      line-height: 2;
+    }
+
+    /* Small reel */
+    .reel-section {
+      padding: 40px 40px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      align-items: start;
+      gap: 32px;
+    }
+    .reel-label-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 4px;
+    }
+    .reel-label-title {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .reel-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      background: var(--text);
+      overflow: hidden;
+    }
+    .reel-wrap iframe {
+      position: absolute;
+      inset: 0; width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Section headers */
+    .work-section-hdr {
+      padding: 40px 40px 28px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .work-section-hdr h2 {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Grid sections */
+    .grid-section {
+      padding: 28px 40px 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Override grid for 2-col on index */
+    .grid-section .work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      .intro { padding: 32px 20px 24px; }
+      .intro-inner { flex-direction: column; gap: 6px; }
+      .intro-descriptor { text-align: left; }
+      .reel-section { grid-template-columns: 1fr; padding: 28px 20px; gap: 16px; }
+      .work-section-hdr { padding: 28px 20px 20px; }
+      .grid-section { padding: 20px 20px 32px; }
+      .grid-section .work-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -13,22 +112,8 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Raphael Roman</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li>
-        <a href="film.html">Film &amp; TV</a>
-        <div class="nav-dropdown">
-          <a href="film.html#cinematic">Cinematic VFX</a>
-          <a href="film.html#product">Product Animation</a>
-          <a href="film.html#cglive">CG / Live Action</a>
-        </div>
-      </li>
-      <li>
-        <a href="games.html">Games</a>
-        <div class="nav-dropdown">
-          <a href="games.html#realtime">Real-Time FX</a>
-          <a href="games.html#breakdowns">Breakdowns</a>
-        </div>
-      </li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#film">Cinematic / Film FX</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -37,18 +122,29 @@
 
 <div class="page">
 
-  <div class="home-intro">
-    <div class="home-intro-inner">
-      <h1 class="home-name">Raphael Roman</h1>
-      <p class="home-descriptor">
+  <!-- INTRO STRIP -->
+  <div class="intro">
+    <div class="intro-inner">
+      <span class="intro-name">Raphael Roman</span>
+      <p class="intro-descriptor">
         VFX Artist &nbsp;/&nbsp; Effects Animation<br>
         Houdini &nbsp;·&nbsp; Unreal Engine 5 &nbsp;·&nbsp; Blender
       </p>
     </div>
   </div>
 
+  <!-- REEL -->
   <section class="reel-section">
-    <p class="eyebrow reel-label">Demo Reel — 2025</p>
+    <div class="reel-label-block">
+      <span class="eyebrow">Demo Reel</span>
+      <span class="reel-label-title">2025</span>
+      <a
+        href="https://youtu.be/EhUYQCfD2EI"
+        target="_blank" rel="noopener"
+        class="eyebrow"
+        style="color:var(--accent);margin-top:4px;"
+      >Watch on YouTube ↗</a>
+    </div>
     <div class="reel-wrap">
       <iframe
         src="https://www.youtube.com/embed/EhUYQCfD2EI?rel=0&modestbranding=1&color=white"
@@ -59,39 +155,74 @@
     </div>
   </section>
 
-  <section class="work-section">
-    <div class="section-header">
-      <span class="section-title">Selected Work</span>
+  <!-- GAMES -->
+  <div id="games">
+    <div class="work-section-hdr">
+      <h2>Game FX</h2>
     </div>
-    <div class="work-grid">
-
-      <a class="work-card" href="games.html">
-        <div class="work-card-placeholder">
-          <span class="eyebrow">Real-Time FX — In Progress</span>
+    <div class="grid-section">
+      <div class="work-grid">
+        <!--
+          ADD GAME VFX CARDS HERE as you complete pieces.
+          Format:
+          <a class="work-card" href="YOUTUBE_OR_ARTSTATION_URL" target="_blank" rel="noopener">
+            <div class="work-card-thumb">
+              <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Effect name">
+              <span class="work-card-tag">Ability FX</span>
+            </div>
+            <div class="work-card-title">Slash Effect</div>
+            <div class="work-card-sub">UE5 &middot; Niagara &middot; Houdini</div>
+          </a>
+        -->
+        <div class="coming-soon">
+          <span class="eyebrow">In Progress</span>
+          <p>Real-time FX in production. Follow along on ArtStation.</p>
+          <a href="https://www.artstation.com/raphyfades" target="_blank" rel="noopener" class="btn">ArtStation ↗</a>
         </div>
-        <div class="work-card-title">Game VFX</div>
-        <div class="work-card-sub">UE5 &middot; Niagara &middot; Houdini</div>
-      </a>
-
-      <a class="work-card" href="film.html">
-        <div class="work-card-placeholder">
-          <span class="eyebrow">Cinematic VFX — Coming Soon</span>
-        </div>
-        <div class="work-card-title">Cinematic VFX</div>
-        <div class="work-card-sub">Houdini &middot; Pyro &middot; RBD</div>
-      </a>
-
-      <a class="work-card" href="film.html#product">
-        <div class="work-card-thumb">
-          <img src="https://img.youtube.com/vi/EhUYQCfD2EI/maxresdefault.jpg" alt="Demo Reel">
-          <span class="work-card-tag">Reel</span>
-        </div>
-        <div class="work-card-title">Demo Reel 2025</div>
-        <div class="work-card-sub">Effects Animation &middot; VFX</div>
-      </a>
-
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- FILM & TV -->
+  <div id="film">
+    <div class="work-section-hdr">
+      <h2>Cinematic / Film FX</h2>
+    </div>
+
+    <!-- Cinematic VFX -->
+    <div class="grid-section" style="padding-bottom:24px;">
+      <p class="eyebrow" style="margin-bottom:16px;">Cinematic VFX</p>
+      <div class="work-grid">
+        <a class="work-card" href="https://youtu.be/EhUYQCfD2EI" target="_blank" rel="noopener">
+          <div class="work-card-thumb">
+            <img src="https://img.youtube.com/vi/EhUYQCfD2EI/maxresdefault.jpg" alt="Demo Reel 2025">
+            <span class="work-card-tag">Reel</span>
+          </div>
+          <div class="work-card-title">Demo Reel 2025</div>
+          <div class="work-card-sub">Effects Animation &middot; VFX</div>
+        </a>
+        <!--
+          ADD more cinematic VFX cards here as you make them.
+        -->
+      </div>
+    </div>
+
+    <!-- Product Animation -->
+    <div class="grid-section" style="border-bottom:none;">
+      <p class="eyebrow" style="margin-bottom:16px;">Product Animation</p>
+      <div class="work-grid">
+        <!--
+          ADD product animation cards here.
+          First one: Perfume Bottle, once it's posted.
+        -->
+        <div class="coming-soon">
+          <span class="eyebrow">In Production</span>
+          <p>Product animation series in progress.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <footer>
     <span class="footer-copy">&copy; 2025 Raphael Roman</span>
