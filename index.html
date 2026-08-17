@@ -31,59 +31,34 @@
       line-height: 2.2;
     }
 
-    /* Small reel — matches work card size, centered */
+    /* Small reel — one card wide, centered, fixed dimensions */
     .reel-section {
       padding: 32px 40px;
       border-bottom: 1px solid var(--line);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .reel-label-block {
       display: flex;
       flex-direction: row;
       align-items: baseline;
       gap: 12px;
-      width: calc((100% - 80px) / 2);
-      max-width: 460px;
+      width: 380px;
     }
     .reel-wrap {
-      position: relative;
-      width: calc((100% - 80px) / 2);
-      max-width: 460px;
-      padding-bottom: 0;
-      aspect-ratio: 16/9;
+      width: 380px;
+      height: 214px;
       background: var(--text);
       overflow: hidden;
+      flex-shrink: 0;
     }
     .reel-wrap iframe {
-      position: absolute;
-      inset: 0; width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       border: none;
-    }
-    .reel-label-block {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-top: 4px;
-    }
-    .reel-label-title {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .reel-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      background: var(--text);
-      overflow: hidden;
-    }
-    .reel-wrap iframe {
-      position: absolute;
-      inset: 0; width: 100%; height: 100%;
-      border: none;
+      display: block;
     }
 
     /* Section headers */
