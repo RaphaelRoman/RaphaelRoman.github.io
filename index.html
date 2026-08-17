@@ -37,14 +37,36 @@
       line-height: 2;
     }
 
-    /* Small reel */
+    /* Small reel — matches work card size, centered */
     .reel-section {
       padding: 32px 40px;
       border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 160px 340px;
-      align-items: start;
-      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .reel-label-block {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 12px;
+      width: calc((100% - 80px) / 2);
+      max-width: 460px;
+    }
+    .reel-wrap {
+      position: relative;
+      width: calc((100% - 80px) / 2);
+      max-width: 460px;
+      padding-bottom: 0;
+      aspect-ratio: 16/9;
+      background: var(--text);
+      overflow: hidden;
+    }
+    .reel-wrap iframe {
+      position: absolute;
+      inset: 0; width: 100%; height: 100%;
+      border: none;
     }
     .reel-label-block {
       display: flex;
@@ -137,13 +159,8 @@
   <section class="reel-section">
     <div class="reel-label-block">
       <span class="eyebrow">Demo Reel</span>
-      <span class="reel-label-title">2026</span>
-      <a
-        href="https://youtu.be/EhUYQCfD2EI"
-        target="_blank" rel="noopener"
-        class="eyebrow"
-        style="color:var(--accent);margin-top:4px;"
-      >Watch on YouTube ↗</a>
+      <span class="reel-label-title" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">2026</span>
+      <a href="https://youtu.be/EhUYQCfD2EI" target="_blank" rel="noopener" class="eyebrow" style="color:var(--accent);margin-left:auto;">Watch on YouTube ↗</a>
     </div>
     <div class="reel-wrap">
       <iframe
