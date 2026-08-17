@@ -9,32 +9,26 @@
   <style>
     /* ── PAGE-SPECIFIC OVERRIDES ── */
 
-    /* Slim intro strip */
+    /* Centered name block */
     .intro {
-      padding: 48px 40px 36px;
+      padding: 80px 40px 60px;
       border-bottom: 1px solid var(--line);
-    }
-    .intro-inner {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
+      text-align: center;
     }
     .intro-name {
       font-family: var(--sans);
-      font-size: 1.25rem;
+      font-size: clamp(2.2rem, 6vw, 4rem);
       font-weight: 400;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
     }
     .intro-descriptor {
       font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      text-align: right;
-      line-height: 2;
+      line-height: 2.2;
     }
 
     /* Small reel — matches work card size, centered */
@@ -134,8 +128,6 @@
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Raphael Roman</a>
     <ul class="nav-links">
-      <li><a href="#games">Games</a></li>
-      <li><a href="#film">Cinematic / Film FX</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -144,15 +136,13 @@
 
 <div class="page">
 
-  <!-- INTRO STRIP -->
+  <!-- INTRO -->
   <div class="intro">
-    <div class="intro-inner">
-      <span class="intro-name">Raphael Roman</span>
-      <p class="intro-descriptor">
-        VFX Artist &nbsp;/&nbsp; Effects Animation<br>
-        Houdini &nbsp;·&nbsp; Unreal Engine 5 &nbsp;·&nbsp; Blender
-      </p>
-    </div>
+    <h1 class="intro-name">Raphael Roman</h1>
+    <p class="intro-descriptor">
+      VFX Artist &nbsp;/&nbsp; Effects Animation<br>
+      Houdini &nbsp;·&nbsp; Unreal Engine 5 &nbsp;·&nbsp; Blender
+    </p>
   </div>
 
   <!-- REEL -->
