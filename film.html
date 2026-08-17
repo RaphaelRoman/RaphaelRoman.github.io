@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film &amp; TV — Raphael Roman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Raphael<span>.</span>Roman</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="film.html" class="active">Film &amp; TV</a>
+        <div class="nav-dropdown">
+          <a href="#cinematic">Cinematic VFX</a>
+          <a href="#product">Product Animation</a>
+          <a href="#cglive">CG / Live Action</a>
+        </div>
+      </li>
+      <li>
+        <a href="games.html">Games</a>
+        <div class="nav-dropdown">
+          <a href="games.html#realtime">Real-Time FX</a>
+          <a href="games.html#breakdowns">Breakdowns</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+  <section class="work-section">
+    <div class="section-header">
+      <div class="section-header-left">
+        <span class="eyebrow">Film &amp; TV</span>
+        <h1 class="section-title">Cinematic Work</h1>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="cinematic">Cinematic VFX</button>
+      <button class="tab-btn" data-tab="product">Product Animation</button>
+      <button class="tab-btn" data-tab="cglive">CG / Live Action</button>
+    </div>
+
+    <!-- CINEMATIC VFX -->
+    <div class="tab-panel active" id="cinematic">
+      <div class="work-grid">
+        <!--
+          Add cinematic VFX work cards here.
+          Example:
+          <a class="work-card" href="YOUTUBE_URL" target="_blank" rel="noopener">
+            <div class="work-card-thumb">
+              <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Project name">
+              <span class="work-card-tag">Pyro</span>
+            </div>
+            <div class="work-card-title">Project Title</div>
+            <div class="work-card-sub">Houdini &middot; Pyro &middot; Mantra</div>
+          </a>
+        -->
+        <a class="work-card" href="https://youtu.be/EhUYQCfD2EI" target="_blank" rel="noopener">
+          <div class="work-card-thumb">
+            <img src="https://img.youtube.com/vi/EhUYQCfD2EI/maxresdefault.jpg" alt="Demo Reel">
+            <span class="work-card-tag">Reel</span>
+          </div>
+          <div class="work-card-title">Demo Reel 2025</div>
+          <div class="work-card-sub">Houdini &middot; VFX &middot; Effects Animation</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- PRODUCT ANIMATION -->
+    <div class="tab-panel" id="product">
+      <div class="work-grid">
+        <!--
+          Add product animation work cards here as you complete them.
+          Start with perfume bottle once posted.
+        -->
+        <div class="coming-soon">
+          <span class="eyebrow">In Production</span>
+          <p>Product animation series in progress — 20 scoped loop animations starting with perfume bottle.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CG / LIVE ACTION -->
+    <div class="tab-panel" id="cglive">
+      <div class="work-grid">
+        <div class="coming-soon">
+          <span class="eyebrow">Coming Soon</span>
+          <p>CG and live action compositing work will appear here.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <span class="footer-copy">&copy; 2025 Raphael Roman</span>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/channel/UCnLnKdnd2WpaRAKZg_2B7FA" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/raphael-e-roman/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.artstation.com/raphyfades" target="_blank" rel="noopener">ArtStation</a>
+      <a href="mailto:raphyfadesanimator@gmail.com">Email</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const hash = location.hash.replace('#','');
+  if (hash && document.querySelector(`[data-tab="${hash}"]`)) {
+    document.querySelector(`[data-tab="${hash}"]`).click();
+    setTimeout(() => document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+</script>
+
+</body>
+</html>
